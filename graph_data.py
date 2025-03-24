@@ -15,8 +15,8 @@ TRANSPORT_GRAPH = {
 }
 
 KNOWLEDGE_BASE = {
-    "rush_hour": True,   # Suponemos que es “hora pico”
-    "holiday": False     # No estamos en día feriado
+    "rush_hour": False,   # Suponemos que es “hora pico”
+    "holiday": True     # No estamos en día feriado
 }
 
 RULES = {

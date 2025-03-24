@@ -61,12 +61,6 @@ def build_graph(connections, kb, rules):
         # Agrega la conexión con el costo ajustado
         graph[s].append((e, adjusted_cost))
         
-        # En muchos sistemas de transporte podría haber bidireccionalidad:
-        # if e not in graph:
-        #     graph[e] = []
-        # graph[e].append((s, adjusted_cost))
-        #
-        # Eso depende de si tu grafo es dirigido o no.
     
     return graph
 
