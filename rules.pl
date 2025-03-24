@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  rutas.pl
-%  Ejemplo de una base de conocimiento en Prolog para encontrar la mejor ruta 
+%  Base de conocimiento en Prolog para encontrar la mejor ruta 
 %  entre estaciones de un sistema de transporte masivo.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

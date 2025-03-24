@@ -8,7 +8,7 @@ def generate_prolog_rules():
         rules.append(f"conexion({start}, {end}, {cost}).")
     return "\n".join(rules)
 
-def buscar_mejor_ruta(punto_inicial, punto_final):
+def search_best_route(initial_point, final_point):
     try:
         prolog = Prolog()
         print("Prolog instance created")
@@ -28,12 +28,12 @@ def buscar_mejor_ruta(punto_inicial, punto_final):
         prolog.consult(rules_file)
         print("Rules loaded successfully")
         
-        query = f"mejor_ruta({punto_inicial}, {punto_final}, Camino, Costo)"
+        query = f"mejor_ruta({initial_point}, {final_point}, Camino, Costo)"
         print(f"Executing query: {query}")
         
         consulta = list(prolog.query(query))
         print(f"Query result: {consulta}")
-        
+          
         # Clean up temporary file
         os.remove(rules_file)
         
@@ -52,7 +52,7 @@ def buscar_mejor_ruta(punto_inicial, punto_final):
 if __name__ == "__main__":
     origen = 'a'
     destino = 'd'
-    mejor_camino, mejor_costo = buscar_mejor_ruta(origen, destino)
+    mejor_camino, mejor_costo = search_best_route(origen, destino)
     
     if mejor_camino:
         print(f"La mejor ruta de {origen} a {destino} es: {mejor_camino}")
