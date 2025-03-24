@@ -20,8 +20,6 @@ El sistema utiliza el algoritmo de Dijkstra para encontrar el camino de menor co
 
 1. Clonar o descargar el repositorio
 2. Navegar al directorio del proyecto:
-```bash
-cd d:\DOCUMENTOS\IBEROAMERICANA\6to_SEMESTRE\INTELIGENCIA_ARTIFICIAL\UNIDAD 2\actividad2
 
 ```bash
 python route_finder.py
