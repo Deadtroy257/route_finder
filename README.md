@@ -1,63 +1,54 @@
 # Sistema Inteligente de Rutas
 
-Este proyecto implementa un sistema inteligente para encontrar la mejor ruta entre dos puntos en un sistema de transporte masivo utilizando programación lógica con Prolog y Python.
+Este proyecto implementa un sistema para encontrar la ruta óptima entre dos puntos en una red de transporte utilizando Python.
 
 ## Descripción
 
-El sistema utiliza una base de conocimiento en Prolog para representar las conexiones entre estaciones y aplicar reglas lógicas para encontrar la ruta óptima (de menor costo) entre un punto de origen y un punto de destino.
+El sistema utiliza el algoritmo de Dijkstra para encontrar el camino de menor costo entre un punto de origen y un destino, implementado completamente en Python.
 
 ## Estructura del Proyecto
 
-- `route_finder.py`: Implementación principal del sistema en Python
-- `graph_data.py`: Datos del grafo de conexiones entre estaciones
-- `rules.pl`: Reglas de Prolog para encontrar la mejor ruta
-- `temp_rules.pl`: Archivo temporal generado durante la ejecución (ignorado en git)
+- `route_finder.py`: Implementación del algoritmo de búsqueda de rutas
+- `graph_data.py`: Almacena las conexiones entre estaciones y sus costos
 
 ## Requisitos
 
-- Python 3.8+
-- PySwip (Python interface for SWI-Prolog)
-- SWI-Prolog
+- Python 3.8 o superior
+- Módulos estándar de Python (no se requieren instalaciones adicionales)
 
 ## Instalación
 
-1. Instalar SWI-Prolog desde [https://www.swi-prolog.org/download/stable](https://www.swi-prolog.org/download/stable)
-2. Instalar PySwip: pip install pyswip
+1. Clonar o descargar el repositorio
+2. Navegar al directorio del proyecto:
+```bash
+cd d:\DOCUMENTOS\IBEROAMERICANA\6to_SEMESTRE\INTELIGENCIA_ARTIFICIAL\UNIDAD 2\actividad2
 
+```bash
+python route_finder.py
+```
 
 ## Uso
 
-Para ejecutar el sistema: python route_finder.py
-
-
-Por defecto, el sistema buscará la mejor ruta desde el punto 'a' hasta el punto 'd'. Para cambiar los puntos de origen y destino, modifique las variables `origen` y `destino` en el archivo `route_finder.py`.
+1. Ejecutar `route_finder.py`.
+2. Ingresar el nombre de la estación de origen y destino.
+3. El sistema mostrará la ruta óptima y el costo total.
 
 ## Ejemplo de Salida
-
-Prolog instance created
-Rules loaded successfully
-Executing query: mejor_ruta(a, d, Camino, Costo)
-Query result: [{'Camino': ['a', 'e', 'f', 'd'], 'Costo': 8}]
-La mejor ruta de a a d es: ['a', 'e', 'f', 'd']
+La mejor ruta de A a D es: ['a', 'e', 'f', 'd']
 Con un costo total de: 8
-
 
 ## Funcionamiento
 
-El sistema funciona en dos partes principales:
+El algoritmo de Dijkstra se utiliza para encontrar la ruta más corta entre dos puntos en un grafo ponderado.
 
-1. **Base de conocimiento en Prolog**: Define las conexiones entre estaciones y las reglas para encontrar rutas.
-   - `conexion/3`: Hechos que representan las conexiones directas entre estaciones y sus costos.
-   - `ruta/4`: Regla recursiva que construye rutas entre estaciones.
-   - `mejor_ruta/4`: Regla que encuentra la ruta de menor costo.
+El sistema utiliza:
 
-2. **Interfaz en Python**: Utiliza PySwip para consultar la base de conocimiento y presentar los resultados.
-   - Carga dinámicamente las conexiones desde `graph_data.py`.
-   - Combina las reglas base con las conexiones.
-   - Ejecuta la consulta Prolog para encontrar la mejor ruta.
+1. Algoritmo de Dijkstra : Para encontrar el camino de menor costo
+2. Separación de preocupaciones :
+   - graph_data.py : Almacena la estructura del grafo
+   - route_finder.py : Contiene la lógica de búsqueda
 
 ## Autor
-
-Estudiante de Ingenieria de Software
+Estudiante de Ingeniería de Software
 Universidad Iberoamericana
 8vo Semestre
